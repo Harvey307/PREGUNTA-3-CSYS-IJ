@@ -53,7 +53,7 @@ public class IsValidEmailTest {
         System.out.println("Caso: Más de una arroba");
         IsValidEmail instance = new IsValidEmail();
 
-        assertFalse(instance.validoEmail("erick@gmail@com"));
+        assertFalse(instance.validoEmail("erick.name@gmail@com"));
     }
 
 
@@ -79,6 +79,12 @@ public class IsValidEmailTest {
 
 
         assertFalse(instance.validoEmail("erick@gmail.com."));
+    }
+
+    //test constructor por si las dudas
+    @Test
+    public void testInstanciacion() {
+        assertNotNull(new IsValidEmail());
     }
 
 
