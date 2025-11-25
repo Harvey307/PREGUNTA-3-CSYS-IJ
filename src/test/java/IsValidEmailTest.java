@@ -1,13 +1,10 @@
-import org.example.isValidEmail;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.example.IsValidEmail;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class isValidEmailTest {
+public class IsValidEmailTest {
 
     @BeforeAll
     public static void setUpClass() {
@@ -16,7 +13,7 @@ public class isValidEmailTest {
     @Test
     public void testEmailValido() {
         System.out.println("Caso: Email correcto estándar");
-        isValidEmail instance = new isValidEmail();
+        IsValidEmail instance = new IsValidEmail();
 
         assertTrue(instance.validoEmail("erick@gmail.com"));
         assertTrue(instance.validoEmail("usuario.nombre@empresa.com.pe"));
@@ -26,7 +23,7 @@ public class isValidEmailTest {
     @Test
     public void testEmailNuloOVacio() {
         System.out.println("Caso: Email nulo o vacío");
-        isValidEmail instance = new isValidEmail();
+        IsValidEmail instance = new IsValidEmail();
 
 
         Exception exceptionNull = assertThrows(IllegalArgumentException.class, () -> {
@@ -43,7 +40,7 @@ public class isValidEmailTest {
     @Test
     public void testFormatoBasicoInvalido() {
         System.out.println("Caso: Formato básico incorrecto");
-        isValidEmail instance = new isValidEmail();
+        IsValidEmail instance = new IsValidEmail();
 
         assertFalse(instance.validoEmail("erickgmail.com")); // Sin arroba
         assertFalse(instance.validoEmail("erick@gmailcom")); // Sin punto
@@ -54,7 +51,7 @@ public class isValidEmailTest {
     @Test
     public void testMultiplesArrobas() {
         System.out.println("Caso: Más de una arroba");
-        isValidEmail instance = new isValidEmail();
+        IsValidEmail instance = new IsValidEmail();
 
         assertFalse(instance.validoEmail("erick@gmail@com"));
     }
@@ -63,7 +60,7 @@ public class isValidEmailTest {
     @Test
     public void testUsuarioInvalido() {
         System.out.println("Caso: Usuario mal formado");
-        isValidEmail instance = new isValidEmail();
+        IsValidEmail instance = new IsValidEmail();
 
         assertFalse(instance.validoEmail("@gmail.com"));      // Usuario vacío
         assertFalse(instance.validoEmail(".erick@gmail.com")); // Empieza con punto
@@ -75,7 +72,7 @@ public class isValidEmailTest {
     @Test
     public void testDominioInvalido() {
         System.out.println("Caso: Dominio mal formado");
-        isValidEmail instance = new isValidEmail();
+        IsValidEmail instance = new IsValidEmail();
 
 
         assertFalse(instance.validoEmail("erick@a.com"));

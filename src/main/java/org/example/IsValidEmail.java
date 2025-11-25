@@ -1,6 +1,6 @@
 package org.example;
 
-public class isValidEmail {
+public class IsValidEmail {
     private String email;
 
     public boolean validoEmail(String email) {
